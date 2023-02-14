@@ -1,0 +1,21 @@
+{
+  "name": "mapever-front",
+  "private": "true",
+  "version": "0.1.0",
+  "description": "Front end collection of mapever.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "OrkWard",
+  "license": "MIT",
+  "dependencies": {
+    "leaflet": "^1.9.3",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "vite": "^4.1.1"
+  }
+}
