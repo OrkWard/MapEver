@@ -1,6 +1,7 @@
 <template>
     <NavBar id="navbar"/>
     <div id="main-container">
+        <ToolBar />
         <Layer/>
         <div id="map"></div>
     </div>
@@ -25,9 +26,12 @@
 }
 </style>
 
+<style src="leaflet/dist/leaflet.css"></style>
+
 <script>
 import Layer from './Layer.vue';
 import NavBar from './NavBar.vue';
+import ToolBar from './ToolBar.vue';
 import L from 'leaflet';
 
 export default {
@@ -38,10 +42,14 @@ export default {
 
     },
     mounted() {
-        let map = L.map('map');
+        let map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
     },
     components: {
-        Layer, NavBar
+        Layer, NavBar, ToolBar
     }
 }
 </script>
