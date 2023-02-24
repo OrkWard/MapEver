@@ -9,8 +9,10 @@
 
 <style scoped>
 #navbar {
-    background-color: aqua;
-    height: 50px;
+    background-color: var(--main-color);
+    padding: 0.3em 0.7em;
+    color: white;
+    flex-basis: 50px;
     display: flex;
     align-items: center;
 }
