@@ -2,7 +2,7 @@
     <NavBar id="navbar"/>
     <div id="main-container">
         <ToolBar />
-        <Layer/>
+        <Layer id="tool-container"/>
         <div id="map"></div>
     </div>
 </template>
@@ -12,9 +12,13 @@
     background-color: var(--main-color);
     padding: 0.3em 0.7em;
     color: white;
-    flex-basis: 50px;
+    flex-basis: 2.3em;
     display: flex;
     align-items: center;
+}
+
+#tool-container {
+    flex-basis: 5em;
 }
 
 #main-container {

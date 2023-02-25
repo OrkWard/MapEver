@@ -1,3 +1,3 @@
 ## todolist
-- [ ] main layout
-- [ ] layers layout
+- [ ] global map object
+- [ ] layer list

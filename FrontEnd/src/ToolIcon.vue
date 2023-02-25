@@ -12,7 +12,10 @@ export default {
 
 <style scoped>
 .toolIcon {
-    padding: 0.5em;
+    padding: 0.2em;
+    height: 3em;
+    width: 3em;
+    overflow: hidden;
 }
 .toolIcon:hover {
     background-color: aqua;
