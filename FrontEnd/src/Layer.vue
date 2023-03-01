@@ -6,15 +6,21 @@
 </template>
 
 <script>
-import { useMapStore } from './global';
+import { mapStore } from './mapStore';
 
 export default {
+    data() {
+        return {
+            layerURL: 'https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3Jrd2FyZCIsImEiOiJja3htcHF2dDExMnh3MnFwZTdjY2R1cDR2In0.Xs5zWniMRbthpxymsVQFJg'
+        }
+    },
     methods: {
         addLayer() {
-            useMapStore().addLayer();
+            console.log(this.layerURL);
+            mapStore.addLayer(this.layerURL, {maxZoom: 19});
         },
         removeLayer() {
-            useMapStore().removeLayer();
+            mapStore.removeLayer();
         }
     }
 }

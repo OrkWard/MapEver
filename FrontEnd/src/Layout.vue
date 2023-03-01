@@ -11,9 +11,7 @@
 import Layer from './Layer.vue';
 import NavBar from './NavBar.vue';
 import ToolBar from './ToolBar.vue';
-import L from 'leaflet';
-
-let map;
+import { mapStore } from './mapStore';
 
 export default {
     data() {
@@ -23,12 +21,7 @@ export default {
 
     },
     mounted() {
-        // initialize Leaflet map object
-        map = L.map('map').setView([51.505, -0.09], 13);
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+        mapStore.init();
 
         // listen events
     },
