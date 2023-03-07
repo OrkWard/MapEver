@@ -2,6 +2,8 @@
 - [x] global map object
   - [x] global object
   - [x] map object
-- [ ] layer list
-  - [ ] grid layer list
-  - [ ] 
+- [ ] navbar
+- [ ] side bar
+  - [ ] layer bar
+  - [ ] base map bar
+  - [ ] TODO...
