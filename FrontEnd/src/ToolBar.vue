@@ -11,7 +11,7 @@ export default {
   components: [ToolIcon],
   data() {
     return {
-      toolSet: ["Layer", "Analysis", "Import", "Export"],
+      toolSet: ["layers", "tables", "basemaps", "charts"],
     };
   },
   components: { ToolIcon },
@@ -23,5 +23,6 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+  background-color: var(--text-2);
 }
 </style>

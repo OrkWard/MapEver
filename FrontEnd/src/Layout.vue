@@ -34,7 +34,7 @@ export default {
 <style scoped>
 
 #tool-container {
-  flex-basis: 5em;
+  flex-basis: 250px;
 }
 
 #main-container {

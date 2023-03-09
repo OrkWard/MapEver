@@ -1,6 +1,6 @@
 <template>
   <header id="navbar">
-    <svg style="transform: rotate(360deg)" id="navbar-menu-icon">
+    <svg id="navbar-menu-icon">
       <path d="M21 6H3V5h18zm0 6H3v1h18zm0 7H3v1h18z"></path>
     </svg>
     <div id="map-title">untitle</div>
@@ -9,10 +9,11 @@
 
 <style scoped>
 #navbar {
-  flex-basis: 2.3em;
+  /* flex-basis: 30px; */
   display: flex;
+  color: var(--text-2);
   align-items: center;
-  border-bottom: solid 1px gray;
+  border-bottom: solid 1px var(--border-1);
 }
 
 #navbar-menu-icon {
