@@ -11,7 +11,7 @@
 import Layer from "./Layer.vue";
 import NavBar from "./NavBar.vue";
 import ToolBar from "./ToolBar.vue";
-import { mapStore } from "./mapStore";
+import { map } from "./mapStore";
 
 export default {
   data() {
@@ -19,7 +19,7 @@ export default {
   },
   methods: {},
   mounted() {
-    mapStore.init();
+    map.init();
 
     // listen events
   },

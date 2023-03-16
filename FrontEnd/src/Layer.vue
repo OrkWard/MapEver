@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { mapStore } from "./mapStore";
+import { map } from "./mapStore";
 
 export default {
   data() {
@@ -18,10 +18,8 @@ export default {
   methods: {
     addLayer() {
       console.log(this.layerURL);
-      mapStore.addLayer(this.layerURL, { maxZoom: 19 });
     },
     removeLayer() {
-      mapStore.removeLayer();
     },
   },
 };
