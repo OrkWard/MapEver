@@ -17,19 +17,20 @@
 }
 
 #navbar-menu-icon {
-    height: 24px;
-    width: 24px;
-    margin-right: 8px;
-    padding: 16px 16px;
-    opacity: 0.8;
-    border-bottom: solid 3px transparent;
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+  padding: 16px 16px;
+  opacity: 0.6;
+  border-bottom: solid 3px transparent;
 }
 #navbar-menu-icon:hover {
-    opacity: 1;
-    border-bottom: solid 3px rgb(0 121 193 / 50%);
+  opacity: 1;
+  border-bottom: solid 3px rgb(0 121 193 / 50%);
+  cursor: pointer;
 }
 
 #map-title {
-    font-size: 24px;
+  font-size: 24px;
 }
 </style>
