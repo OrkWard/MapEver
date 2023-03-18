@@ -2,20 +2,22 @@
   <NavBar />
   <div id="main-container">
     <ToolBar />
-    <Layer id="tool-container" />
+    <component id="tool-container" :is="currentTab"></component>
     <div id="map"></div>
   </div>
 </template>
 
 <script>
-import Layer from "./Layer.vue";
+import LayerList from "./LayerList.vue";
 import NavBar from "./NavBar.vue";
 import ToolBar from "./ToolBar.vue";
 import { initLeaflet } from "./mapStore";
 
 export default {
   data() {
-    return {};
+    return {
+      currentTab: "LayerList",
+    };
   },
   methods: {},
   mounted() {
@@ -24,7 +26,7 @@ export default {
     // listen events
   },
   components: {
-    Layer,
+    LayerList,
     NavBar,
     ToolBar,
   },
