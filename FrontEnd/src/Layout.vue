@@ -11,7 +11,7 @@
 import Layer from "./Layer.vue";
 import NavBar from "./NavBar.vue";
 import ToolBar from "./ToolBar.vue";
-import { map } from "./mapStore";
+import { initLeaflet } from "./mapStore";
 
 export default {
   data() {
@@ -19,7 +19,7 @@ export default {
   },
   methods: {},
   mounted() {
-    map.init();
+    initLeaflet();
 
     // listen events
   },
@@ -32,7 +32,6 @@ export default {
 </script>
 
 <style scoped>
-
 #tool-container {
   flex-basis: 250px;
 }

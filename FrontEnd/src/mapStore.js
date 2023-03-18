@@ -1,31 +1,52 @@
 import L from "leaflet";
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
 let _map = null;
 
-export const map = {
-  init() {
-    _map = L.map("map").setView([51.505, -0.09], 13);
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+// use different argument list to construct different layer object
+class Layer {
+  constructor(type, option) {
+    this.type = type;
+    this.option = option;
+    if (type === "XYZ" && arguments.length === 3) {
+      this.url = arguments[2];
+    } else {
+      throw new Error("layer constructed with wrong arguments!");
+    }
+  }
+
+  addToMap() {
+    if (this.type === "XYZ") {
+      L.tileLayer(this.url, this.option).addTo(_map);
+    }
+  }
+}
+
+export function initLeaflet() {
+  _map = L.map("map").setView([51.505, -0.09], 13);
+  const map = useMapStore();
+  map.push(
+    "XYZ",
+    {
       maxZoom: 19,
       attribution:
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(_map);
-  }
-};
+    },
+    "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+  );
+}
 
-export const useLayerStore = defineStore('layerList', {
+export const useMapStore = defineStore("map", {
   state() {
     return {
-      layers: [ {type: 'XYZ', url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'} ]
-    }
+      layerList: [],
+    };
   },
   actions: {
-    push(layer) {
-      if (layer.type === 'XYZ' && layer.hasOwnProperty('url')) {
-        this.layers.push();
-        L.tileLayer(url, layer.option).addTo(_map);
-      }
-    }
-  }
-})
+    push() {
+      const newLayer = new Layer(...arguments);
+      this.layerList.push(newLayer);
+      newLayer.addToMap();
+    },
+  },
+});

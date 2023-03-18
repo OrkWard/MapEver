@@ -14,7 +14,6 @@ export default {
     fetch('/toolTips/' + this.toolName + '.svg')
       .then(response => response.text())
       .then(svgString => {
-        console.log(this.$refs.svg);
         this.$refs.svg.innerHTML = svgString.trim();
       })
   }
