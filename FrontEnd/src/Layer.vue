@@ -1,9 +1,11 @@
 <template>
-  <div>helle, Layer.vue!</div>
+  <div>{{ name }}</div>
+  <input type="button" value="remove" @click.prevent="$emit('remove', index)" />
 </template>
 
 <script>
 export default {
-  data() {},
+  props: ["name", "index"],
+  emits: ["remove"],
 };
 </script>

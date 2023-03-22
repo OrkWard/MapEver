@@ -1,8 +1,13 @@
 <template>
   <div>
-    <Layer v-for="layer in layerList"/>
+    <Layer
+      v-for="(layer, index) in layerList"
+      :name="layer.name"
+      :index="index"
+      :key="layer.id"
+      @remove="(n) => removeLayer(n)"
+    />
     <input type="button" value="addLayer" @click.prevent="addLayer" />
-    <input type="button" value="removeLayer" @click.prevent="removeLayer" />
   </div>
 </template>
 
@@ -19,16 +24,19 @@ export default {
     };
   },
   computed: {
-    ...mapState(useMapStore, ['layerList'])
+    ...mapState(useMapStore, ["layerList"]),
   },
   methods: {
     addLayer() {
       const map = useMapStore();
-      map.push("XYZ", { maxZoom: 19 }, this.layerURL);
+      map.push("MapBox", "XYZ", { maxZoom: 19 }, this.layerURL);
       console.log(this.layerURL);
     },
-    removeLayer() {},
+    removeLayer(n) {
+      this.layerList[n].layer.remove();
+      this.layerList.splice(n, 1);
+    },
   },
-  components: { Layer }
+  components: { Layer },
 };
 </script>
