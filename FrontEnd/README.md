@@ -1,9 +1,3 @@
-## todolist
-- [x] global map object
-  - [x] global object
-  - [x] map object
-- [ ] navbar
-- [ ] side bar
-  - [ ] layer bar
-  - [ ] base map bar
-  - [ ] TODO...
+总结一下图层板块需要完成的功能：
+  上部展示图层序列，底部设置“添加”按钮
+  添加默认从列表选择，也可以从 URL 添加图层
